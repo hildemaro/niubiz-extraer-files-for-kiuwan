@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/api-antifraud-standalone" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/api.visadirect" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/aws.api.qr.callback" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/aws.api.qr.manager" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/batch.qr.pagoefectivo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/job.vd.conciliador" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/provider.mastercardsend" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/provider.stratus.periferia57" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/provider.visadirect" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/support-flow-hyperledger-listener" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/vm-hyperledger-conector" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Marzo 2025/webmovilfrontdinamico" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/provider.visadirect" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/provider.stratus.periferia57" vcs="Git" />
   </component>
 </project>
