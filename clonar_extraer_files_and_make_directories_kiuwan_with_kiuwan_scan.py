@@ -130,9 +130,7 @@ for archivo in archivos_eliminados: print(f"❌ Eliminado: {archivo}")
 
 print(f"\n📁 Archivos para análisis preparados en: '{DESTINO_PATH}'")
 
-# ==============================================================================
-# 🔹 Creación de Estructura de Carpetas Kiuwan para Reportes (LÓGICA REINTEGRADA)
-# ==============================================================================
+# 🔹 Creación de Estructura de Carpetas Kiuwan para Reportes
 print("\n🌀 Creando estructura de carpetas para reportes Kiuwan...")
 try:
     KIUWAN_BASE = os.path.abspath(f"kiuwan_{DESTINO_BASE}")
@@ -148,15 +146,13 @@ try:
     for subdir in estructura_kiuwan:
         os.makedirs(os.path.join(KIUWAN_BASE, subdir), exist_ok=True)
 
-    # Copiar archivos XLSX
     shutil.copy2("Inventario de vulnerabilidades.xlsx",
                  os.path.join(KIUWAN_BASE, f"Analisis_Kiuwan-{DESTINO_BASE}", "Inventario de vulnerabilidades.xlsx"))
     shutil.copy2("Plantilla de reportesKiuwan.xlsx", os.path.join(KIUWAN_BASE, "Plantilla de reportesKiuwan.xlsx"))
     print(f"✅ Estructura de reportes creada exitosamente en '{KIUWAN_BASE}'")
 
 except FileNotFoundError as e:
-    print(
-        f"\n⚠️  ADVERTENCIA: No se pudo copiar el archivo de reporte '{e.filename}'. Asegúrate que exista en el mismo directorio que el script.")
+    print(f"\n⚠️  ADVERTENCIA: No se pudo copiar el archivo de reporte '{e.filename}'.")
 except Exception as e:
     print(f"\n⚠️  ADVERTENCIA: Ocurrió un error creando la estructura de carpetas para reportes: {e}")
 
@@ -177,33 +173,4 @@ try:
 
     # 2. Determinar el ejecutable correcto
     agent_filename = "agent.cmd" if platform.system() == "Windows" else "agent.sh"
-    kiuwan_executable = os.path.join(kiuwan_bin_path, agent_filename)
-
-    if not os.path.exists(kiuwan_executable):
-        raise FileNotFoundError(f"El ejecutable '{agent_filename}' no se encuentra en '{kiuwan_bin_path}'")
-
-    # 3. Pedir la etiqueta para el escaneo
-    scan_label = simpledialog.askstring("Etiqueta del Escaneo Kiuwan",
-                                        "Ingrese un nombre (etiqueta) para este escaneo:", parent=root)
-    if not scan_label:
-        exit("❌ No se ingresó etiqueta para el escaneo. Abortando.")
-
-    # 4. La carpeta a escanear es DESTINO_PATH
-    source_path_to_scan = DESTINO_PATH
-
-    # 5. Construir el comando Kiuwan
-    kiuwan_command = f'"{kiuwan_executable}" -s "{source_path_to_scan}" -n "{KIUWAN_APP_NAME}" -l "{scan_label}"'
-
-    print(f"\n▶️  Ejecutando el siguiente comando Kiuwan:\n")
-    print(kiuwan_command)
-    print("\n" + "-" * 50)
-
-    # 6. Ejecutar el comando
-    os.system(kiuwan_command)
-    print("\n" + "-" * 50)
-    print("✅ Escaneo Kiuwan iniciado.")
-
-except FileNotFoundError as e:
-    print(f"\n❌ ERROR DE CONFIGURACIÓN: {e}")
-except Exception as e:
-    print(f"\n❌ Error inesperado durante el escaneo de Kiuwan: {e}")
+    kiuwan_executable = os.path.join(kiuwan_bin_path,
