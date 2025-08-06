@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/provider.mastercardsend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flowmanagement_2.0-oper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workload-inpm-antifraudepost-lambda" vcs="Git" />
   </component>
 </project>
